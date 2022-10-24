@@ -22,4 +22,10 @@
 
 </ul>
 
+<h2 align="center"> Workflow </h2>
+
+<img align="center" src="https://drive.google.com/uc?export=view&id=1L0n5g9uTLKlGKdGZVfglu60-zF9zS_cb"></img>
+
+
+
 
