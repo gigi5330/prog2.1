@@ -1,0 +1,141 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+main section {
+    width: 50%;
+    margin: 25px;
+}
+
+main section h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+main section form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main section form label {
+    width: 30%;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+main section form input[type=text],
+main section form input[type=number] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+main section form button[type=submit] {
+    width: 30%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Transaction Tabelle */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table thead {
+    background-color: #555;
+    color: #fff;
+}
+
+table th {
+    border: 1px solid #ccc;
+    padding: 12px;
+}
+
+table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Robot and speech bubble */
+.robot {
+    width: 20%;
+    float: left;
+    margin-right: 20px;
+}
+
+.quadrat {
+    background-color: #b7b6b6;
+    position: relative;
+    text-align: center;
+    max-width: 250px;
+    margin-inline: 150px;
+    padding: 5%;
+    border-top-left-radius: 86%;
+    border-top-right-radius: 62%;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 92%;
+}
+
+#speech-bubble-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

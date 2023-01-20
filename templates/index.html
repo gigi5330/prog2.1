@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Financy - Der smarte Finanzcoach</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+</head>
+
+<body>
+    <header>
+        <h1>Willkommen bei Financy</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Einnahmen hinzufügen</h2>
+            <form action="/add-income" method="post">
+                <label for="transaction-title">Titel:</label>
+                <input type="text" id="transaction-title" name="transaction-title">
+                <label for="transaction-amount">Betrag:</label>
+                <input type="number" id="transaction-amount" name="transaction-amount">
+                <label for="category">Kategorie:</label>
+                <select id="category" name="category">
+                    {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Hinzufügen</button>
+            </form>
+        </section>
+        <section>
+            <h2>Ausgabe hinzufügen</h2>
+            <form action="/add-expense" method="post">
+                <label for="transaction-title">Titel:</label>
+                <input type="text" id="transaction-title" name="transaction-title">
+                <label for="transaction-amount">Betrag:</label>
+                <input type="number" id="transaction-amount" name="transaction-amount">
+                <label for="category">Kategorie:</label>
+                <select id="category" name="category">
+                    {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Hinzufügen</button>
+            </form>
+        </section>
+        <section>
+            <h2>Kategorie hinzufügen</h2>
+            <form action="/add-category" method="post">
+                <label for="category">Kategorie:</label>
+                <input type="text" id="new_category" name="new_category">
+                <button type="submit">Hinzufügen</button>
+            </form>
+        </section>
+        <section>
+            <h2>Budget festlegen</h2>
+            <form action="/set-budget" method="post">
+                <label for="budget-amount">Betrag:</label>
+                <input type="number" id="budget-amount" name="budget-amount">
+                <button type="submit">Budget bestätigen</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Transaktionen</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titel</th>
+                        <th>Betrag</th>
+                        <th>Kategorie</th>
+                        <th>Datum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ transaction.title }}</td>
+                        <td>{{ transaction.amount }}</td>
+                        <td>{{ transaction.category }}</td>
+                        <td>{{ transaction.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Budget Übersicht</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titel</th>
+                        <th>Betrag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Dein Budget
+                        </td>
+                        <td id="budget">{{ budget }}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Verbleibendes Budget
+                        </td>
+                        <td id="budget-remaining">{{ budget_remaining }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <div class="quadrat" id="robot-message">
+                <p id="speech-bubble-text">
+                    <script src="{{url_for('static', filename='script.js')}}"></script>
+                </p>
+            </div>
+            <div id="robot-container">
+                <img src="{{url_for('static', filename='robot.png')}}" id="robot-image" class="robot">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © Financy</p>
+    </footer>
+</body>
+
+</html>
